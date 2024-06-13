@@ -4,7 +4,7 @@ import { MedicalInformationRounded } from '@mui/icons-material';
 
 const Header = () => {
   return (
-    <AppBar color="secondary">
+    <AppBar sx={{ backgroundColor: "blue" }}>
       <Toolbar>
         <Typography
           variant="h3"
@@ -24,11 +24,11 @@ const Header = () => {
             },
           }}
         >
-          <MedicalInformationRounded sx={{ color: 'white', fontSize: "40px" }} />
+          <MedicalInformationRounded sx={{ color: 'white', fontSize: '40px' }} />
         </Box>
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 export default Header;

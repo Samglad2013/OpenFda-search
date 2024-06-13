@@ -36,17 +36,19 @@ const MedicationSearch = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '100vh',
-        width: "100%",
+        width: "100vw",
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
       }}
     >
-      <Paper sx={{
-        padding: isSmallScreen ? '10px' : isMediumScreen ? '20px' : '40px',
-        width: isSmallScreen ? '90%' : isMediumScreen ? '80%' : '60%',
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-      }}>
+      <Paper
+        sx={{
+          padding: isSmallScreen ? '10px' : isMediumScreen ? '20px' : '40px',
+          width: isSmallScreen ? '90%' : isMediumScreen ? '80%' : '60%',
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        }}
+      >
         <Typography variant="h4" component="h1" gutterBottom align="center">
           Medication Search
         </Typography>
@@ -56,9 +58,9 @@ const MedicationSearch = () => {
           fullWidth
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          sx={{ marginBottom: '20px' }} 
+          sx={{ marginBottom: '20px' }}
         />
-        <Box display="flex" justifyContent="center" sx={{ marginTop: '20px' }}>
+        <Box display="flex" justifyContent="center" sx={{ marginTop: '20px', color:"blue" }}>
           <Button
             variant="contained"
             onClick={handleSearch}
