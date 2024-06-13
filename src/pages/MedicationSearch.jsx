@@ -20,6 +20,7 @@ const MedicationSearch = () => {
         setResults(response.data.results);
         setError(null);
       } else {
+        console.log('No results found', response);
         setResults([]);
         setError('No results found');
       }
@@ -30,7 +31,7 @@ const MedicationSearch = () => {
   };
 
   return (
-    <Box
+    <Box 
       sx={{
         backgroundImage: `url(${homebg})`,
         backgroundSize: 'cover',
@@ -60,7 +61,7 @@ const MedicationSearch = () => {
           onChange={(e) => setQuery(e.target.value)}
           sx={{ marginBottom: '20px' }}
         />
-        <Box display="flex" justifyContent="center" sx={{ marginTop: '20px', color:"blue" }}>
+        <Box display="flex" justifyContent="center" sx={{ marginTop: '20px', color: "blue" }}>
           <Button
             variant="contained"
             onClick={handleSearch}

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { Typography, Container, CircularProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, useMediaQuery } from '@mui/material';
+import { Typography, Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, useMediaQuery } from '@mui/material';
 
 const MedicationDetails = () => {
   const { id } = useParams();
   const [medication, setMedication] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -14,7 +13,6 @@ const MedicationDetails = () => {
 
   useEffect(() => {
     const fetchMedication = async () => {
-      setLoading(true);
       try {
         const response = await axios.get(`https://api.fda.gov/drug/label.json?search=id:${id}`);
         if (response.data && response.data.results && response.data.results.length > 0) {
@@ -26,22 +24,12 @@ const MedicationDetails = () => {
       } catch (error) {
         console.error('Error fetching medication details', error);
         setError('An error occurred while fetching the medication details.');
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchMedication();
   }, [id]);
 
-  if (loading) {
-    return (
-      <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
-        <CircularProgress />
-      </Box>
-    );
-  }
-  
   if (error) {
     return (
       <Typography color="error">

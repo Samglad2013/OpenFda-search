@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import MedicationSearch from './components/MedicationSearch';
-import MedicationDetails from './components/MedicationDetails';
+import MedicationSearch from './pages/MedicationSearch';
+import MedicationDetails from './pages/MedicationDetails';
 
 function App() {
   return (

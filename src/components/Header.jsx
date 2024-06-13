@@ -7,7 +7,7 @@ const Header = () => {
     <AppBar sx={{ backgroundColor: "blue" }}>
       <Toolbar>
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
             '@media (max-width:600px)': {
               textAlign: 'center',
